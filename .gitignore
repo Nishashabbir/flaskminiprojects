@@ -1,0 +1,14 @@
+# Ignore the virtual environment folder
+venv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore the local database (we don't want to upload your test data)
+instance/
+todo.db
+*.db
+
+# Ignore environment variables (security best practice)
+.env
