@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Flask App</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #f4f4f4; padding: 10px; margin-bottom: 5px; display: flex; justify-content: space-between; }
+        a { color: red; text-decoration: none; font-weight: bold; }
+        input { padding: 10px; width: 70%; }
+        button { padding: 10px; width: 20%; background: #28a745; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Nisha's To-Do List</h1>
+    
+    <form action="/add" method="POST">
+        <input type="text" name="task" placeholder="Add a new task..." required>
+        <button type="submit">Add</button>
+    </form>
+
+    <ul>
+        {% for task in tasks %}
+        <li>
+            {{ task.content }}
+            <a href="/delete/{{ task.id }}">X</a>
+        </li>
+        {% else %}
+        <p>No tasks yet.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
