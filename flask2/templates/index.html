@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+
+<body>
+    <h1>Welcome to the Home Page</h1>
+
+  <form method="POST" action="/">
+    <!-- rent claculator -->
+    <!-- food , electricity , rent , no.of people  -->
+    <label for="food">Food Expense:</label>
+    <input type="number" name="food"><br><br>
+    <label for="rent">The total rent </label>
+    <input type="number" name="rent"> <br><br>
+    <label for="people">No.of people</label>
+    <input type="number" name="people"><br><br>
+    <label for="units">Units consumed</label>
+    <input type="number" name="units"><br><br>
+    <label for="charge_per">Charge per unit</label>
+    <input type="number" name="charge_per"><br><br>
+    <input type="submit" value="Calculate">
+    </form>
+
+</body>
+
+</html>

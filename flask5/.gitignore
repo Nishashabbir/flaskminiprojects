@@ -1,0 +1,24 @@
+# --- Python Internals ---
+# Temporary compiled files (useless to share)
+__pycache__/
+*.pyc
+
+# --- Virtual Environment ---
+# We never upload this. Others create their own using requirements.txt
+venv/
+env/
+
+# --- Database ---
+# Don't upload your local database content
+*.db
+*.sqlite3
+
+# --- OS Junk Files ---
+# Mac and Windows temporary folder settings
+.DS_Store
+Thumbs.db
+
+# --- Environment Variables ---
+# (Future proofing) If you add API keys later, they go in .env
+# and you MUST ignore this file for security.
+.env

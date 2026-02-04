@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Manager</title>
+</head>
+<body>
+    <h1>Contacts</h1>
+    <ul>
+{% for c in contacts %}
+  <li>
+    <strong> Name : {{ c.name }}</strong><br>
+    Phone: {{ c.phone }}<br>
+    Email: {{ c.email }}<br>
+
+    <!--heree Delete the contct-->
+    <a href="/delete/{{ c.id }}">Delete</a> <br><br>
+
+    <!-- Update  the contact here -->
+    <form action="/update/{{ c.id }}" method="post">
+        <input name="name" value="{{ c.name }}">
+        <input name="phone" value="{{ c.phone }}">
+        <input name="email" value="{{ c.email }}">
+        <button>Update</button>
+    </form>
+  </li>
+{% endfor %}
+</ul>
+
+
+    <h2>Add New Contact here: </h2>
+    <form action="/add" method="post">
+        <input type="text" name="name" placeholder="Name" required><br>
+        <input type="text" name="phone" placeholder="Phone" required><br>
+        <input type="email" name="email" placeholder="Email" required><br><br>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
